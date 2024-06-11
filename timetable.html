@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Tur Reser</title>
+    <meta charset="utf-8">
+	
+	<link href='fullcalendar-1.6.1/fullcalendar/fullcalendar.css' rel='stylesheet' />
+    <link href='fullcalendar-1.6.1/fullcalendar/fullcalendar.print.css' rel='stylesheet' media='print' />
+
+	
+    <link rel="stylesheet" type="text/css" media="screen" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/grid_12.css">
+    <script src="js/jquery-1.7.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/cufon-yui.js"></script>
+    <script src="js/Asap_400.font.js"></script>
+    <script src="js/Coolvetica_400.font.js"></script>
+	<script src="js/Kozuka_M_500.font.js"></script>
+    <script src="js/cufon-replace.js"></script>
+    <script src="js/FF-cash.js"></script>
+	
+	
+	<script src='fullcalendar-1.6.1/jquery/jquery-1.9.1.min.js'></script>
+	<script src='fullcalendar-1.6.1/jquery/jquery-ui-1.10.2.custom.min.js'></script>
+	<script src='fullcalendar-1.6.1/fullcalendar/fullcalendar.min.js'></script>
+	
+	
+	
+<script>
+
+	$(document).ready(function() {
+	
+		var date = new Date();
+		var d = date.getDate();
+		var m = date.getMonth();
+		var y = date.getFullYear();
+		
+		var calendar = $('#calendar').fullCalendar({
+			header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month' // esto agrega agenda semanal, agenda dia 'month,agendaWeek,agendaDay' 
+			},
+			selectable: true,
+			selectHelper: true,
+			select: function(start, end, allDay) {
+				var title = prompt('Nombre del Cliente:');
+				if (title) {
+					calendar.fullCalendar('renderEvent',
+						{
+							title: title,							 
+							start: start,
+							end: end,
+							allDay: allDay
+						},
+						true // make the event "stick"
+					);
+				}
+				calendar.fullCalendar('unselect');
+			},
+			editable: true,
+			events: [
+				
+				{
+					title: 'Flia Pascal',
+					start: new Date(y, m, 5),
+					end: new Date(y, m, 12)
+				},
+				{
+					id: 999,
+					title: 'papa francisco',
+					start: new Date(y, m, 3, 16, 0),
+					allDay: false
+				},
+				
+				{
+					title: 'Satanas',
+					start: new Date(y, m, 28, 10, 30),
+					end: new Date(y, m, 30, 22, 30),
+					allDay: false
+				},
+				{
+					title: 'Harry potter',
+					start: new Date(y, m, 19, 12, 0),
+					end: new Date(y, m, 22, 14, 0),
+					allDay: false
+				},
+				{
+					title: 'Homero Simpson',
+					start: new Date(y, m, 25, 19, 0),
+					end: new Date(y, m, 26, 22, 30),
+					allDay: false
+				},
+				{
+					title: 'Asesor de Google',
+					start: new Date(y, m, 13),
+					end: new Date(y, m, 16),
+					url: 'http://google.com/'
+				}
+			]
+		});
+		
+	});
+
+</script>
+	<!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+   		<script type="text/javascript" src="js/html5.js"></script>
+    	<link rel="stylesheet" type="text/css" media="screen" href="css/ie.css">
+	<![endif]-->
+	
+	<style>
+	<!-- tamaño para el calendario -->
+	#calendar {
+		width: 600px;
+		
+		margin: 0 auto;
+		}   
+
+</style>
+</head>
+<body>
+<div class="main">
+	<div class="bg-img"></div>
+<!--==============================header=================================-->
+    <header>
+        <h1><a href="index.html"> Tur<strong>Reser</strong></a></h1>
+        <nav>
+		<!-- revisar los id y las classs -->
+		<p id="session-nav" class="tRight">
+			Bienvenido <strong><a href="https://turreser.com.ar/users/edit/" title="Editar usuario">Walter Herrera</a></strong> |
+			<a href="https://turreser.com.ar/users/logout" title="Cerrar sesión">Cerrar sesión</a>
+			<a href="http://www.turreser.com.ar/ayuda/" id="help-session-nav" target="_blank" 
+			title="Ayuda">Ayuda</a>
+			
+		</p>
+        	<div class="social-icons">
+            	<a href="http://facebook.com/equilibrio-pilates" class="icon-2"></a>
+            	<a href="#" class="icon-1"></a>
+            </div>
+            <ul class="menu">
+                <li class="current"><a href="index.html">Inicio</a></li>
+                <li><a href="panel.html">Panel principal</a></li>
+                <li><a href="timetable.html">Reservas</a></li>
+                <li><a href="clientes.html">Clientes</a></li>
+                <li><a href="adminis.html">Administracion</a></li>
+                <li><a href="contacts.html">Ayuda</a></li>
+            </ul>
+        </nav>
+    </header>   
+<!--==============================content================================-->
+    <section id="content"><div class="ic"></div>
+        <div class="container_12">
+          <div class="grid_12">
+          	<div class="box-shadow">
+            	<div class="wrap block-2">
+                    
+					     
+					 <div class="col-1">	
+					 <div id='calendar'></div> 
+                    </div> 
+                    <div class="col-2">
+                        <h2 class="p3"><span class="color-1">Calendario</span> para tu alojamiento</h2>
+                        <p class="p2"><strong>Calendario de prueba</strong></p>
+                        <p>Puede hacer click sobre un dia del calendario y agregar el nombre de un cliente, tambien puede extender los dias para ello arrastre la seleccion anterior
+						hasta la fecha que desee.
+						Por cada alojamiento que usted configura tendra un calendario, podra optar por ver si lo desea un calendario
+						completo de sus ocupacion.</p>
+                        <img src="images/page3-img1.jpg" alt="" class="img-border pad-1">
+                        <ul class="list-2">
+                        	<li><a href="#">cabaña 4 personas</a></li>
+                            <li><a href="#">habitacion 4 personas</a></li>
+                            <li><a href="#">refugio 4 personas</a></li>
+                            <li><a href="#">depto 8 personas</a></li>
+                            <li><a href="#">configure cantidad locaciones</a></li>
+                        </ul>
+                        <a href="#" class="button top-5">leer mas</a>
+                    </div>  
+                </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+    </section> 
+<!--==============================footer=================================-->
+    <footer>
+        <p>© 2013 Tur Reser</p>
+        <p><a rel="nofollow" href="http://www.nex-sur.com.ar/" class="link" target="_blank">Webmaster</a> para Tur Reser  </p>
+		<p>Usa Tur Resers <a href="http://www.nex-sur.com.ar" target="_blank">de nex-sur.com.ar</a>. | <a href="http://www.nex-sur.com.ar/" title="Reserva Turistica">www.turreser.com.ar</a>. La mejor opcion en Administracion de tus reservas.</p>
+    </footer>	
+</div>    
+<script>
+	Cufon.now();
+</script>
+</body>
+</html>
